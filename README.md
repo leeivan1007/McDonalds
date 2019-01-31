@@ -15,3 +15,6 @@
 6.餐廳跟餐點項目(DB)
 
 7.點餐自動化 - 取代手工執行
+
+## License
+M to the I to the T. See the LICENSE file if you've never seen an MIT license before.
