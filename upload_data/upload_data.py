@@ -29,7 +29,7 @@ def check_auth():
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                'credentials.json', SCOPES)
+                'upload_data/credentials.json', SCOPES)
             creds = flow.run_local_server()
         # Save the credentials for the next run
         with open('token.pickle', 'wb') as token:
@@ -38,7 +38,7 @@ def check_auth():
 
 
 def load_items_from_json_file(path=''):
-    items = open('crawling/items.json')
+    items = open(path)
     items = json.load(items)
 
     sorted_data = []
@@ -57,7 +57,7 @@ def load_items_from_json_file(path=''):
     return body
 
 
-def main():
+def start_upload():
     """Shows basic usage of the Sheets API.
     Prints values from a sample spreadsheet.
     """
@@ -70,7 +70,3 @@ def main():
     result = service.spreadsheets().values().update(
         spreadsheetId=SAMPLE_SPREADSHEET_ID, range=SAMPLE_RANGE_NAME,
         valueInputOption='RAW', body=body).execute()
-
-
-if __name__ == '__main__':
-    main()
