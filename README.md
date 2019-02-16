@@ -16,5 +16,8 @@
 
 7.點餐自動化 - 取代手工執行
 
+## Install Python Packages
+`pip install -r requirements.txt`
+
 ## License
 M to the I to the T. See the LICENSE file if you've never seen an MIT license before.

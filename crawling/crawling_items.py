@@ -37,7 +37,7 @@ def parser_append(soup, items):
         items["追加"][name] = cost
     return items
 def parser_coffee(soup, items):
-    coffee_name_list = soup.find_all('h5',{'class': 'coffee-title'})
+    coffee_name_list = soup.find_all('h5',{'class': 'product-title'})
     coffee_cost_list = soup.find_all('span',{'class': 'starting-price'})
 
     for name, cost in zip(coffee_name_list, coffee_cost_list):
@@ -64,13 +64,13 @@ def parser_drink(soup, items):
         cost = filter_cost(cost.text)
         items["飲料"][name] = cost
     return items
-def load_account(json_data = 'account.json'):
+def load_account(json_data = 'crawling/account.json'):
     with open(json_data, 'r') as f:
         data = json.load(f)
     if data['username'] == 'yourmail' or data['password'] == 'yourpassword':
         raise Exception('請至account.json更新可使用帳號跟密碼')
     return data['username'], data['password']
-def main():
+def start_crawling():
     # 前置
     username, password = load_account()
 
@@ -136,11 +136,13 @@ def main():
         back_to_menu(driver)
         
     driver.close()
+<<<<<<< HEAD
     with open('items.json', 'w') as f:
+=======
+
+    with open('crawling/items.json', 'w') as f:
+>>>>>>> 6c7facd43be32c1de91befc8863a2fb54f3b3fb9
         json.dump(items, f)
 
-    with open('items.json', 'r') as f:
+    with open('crawling/items.json', 'r') as f:
         items = json.load(f)
-
-if __name__ ==  "__main__":
-	main()
