@@ -136,7 +136,6 @@ def main():
         back_to_menu(driver)
         
     driver.close()
-
     with open('items.json', 'w') as f:
         json.dump(items, f)
 
