@@ -1,6 +1,6 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
-import urllib
+＃import urllib 使用再拿掉
 import time
 import random
 import selenium.webdriver.support.ui as ui
