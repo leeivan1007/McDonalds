@@ -16,6 +16,6 @@ requests-oauthlib==1.2.0
 rsa
 selenium==3.141.0
 six==1.12.0
-soupsieve==1.7.3
+soupsieve
 uritemplate==3.0.0
 urllib3
